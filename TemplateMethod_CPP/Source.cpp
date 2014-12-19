@@ -1,79 +1,69 @@
-#include <stdio.h>
-
+#include <iostream>
+using namespace std;
 
 class Base
 {
 	void a()
 	{
-		printf("a ");
+		cout << "a  ";
 	}
-
 	void c()
 	{
-		printf("c");
+		cout << "c  ";
 	}
-
-	// Placeholders
+	void e()
+	{
+		cout << "e  ";
+	}
+	// 2. Steps requiring peculiar implementations are "placeholders" in base class
 	virtual void ph1() = 0;
 	virtual void ph2() = 0;
-
 public:
-	void excute()
+	// 1. Standardize the skeleton of an algorithm in a base class "template method"
+	void execute()
 	{
 		a();
 		ph1();
 		c();
 		ph2();
+		e();
 	}
 };
 
 class One : public Base
 {
-	void ph1()
+	// 3. Derived classes implement placeholder methods
+	/*virtual*/void ph1()
 	{
-		printf("b ");
+		cout << "b  ";
 	}
-
-	void ph2()
+	/*virtual*/void ph2()
 	{
-		printf("d ");
+		cout << "d  ";
 	}
-
 };
 
 class Two : public Base
 {
-	void ph1()
+	/*virtual*/void ph1()
 	{
-		printf("a++ ");
+		cout << "2  ";
 	}
-	void ph2()
+	/*virtual*/void ph2()
 	{
-		printf("b++ ");
-	}
-};
-
-class Three : public Base
-{
-	void ph1()
-	{
-		// May be more...
-	}
-	void ph2()
-	{
-		// May be more...
+		cout << "4  ";
 	}
 };
 
-
-
-void main()
+int main()
 {
-	Base *array [] = { &One(), &Two(), &Three() };
-
+	Base *array [] =
+	{
+		&One(), &Two()
+	};
 	for (int i = 0; i < 2; i++)
 	{
-		array[i]->excute();
-		printf("\n");
+		array[i]->execute();
+		cout << '\n';
 	}
 }
