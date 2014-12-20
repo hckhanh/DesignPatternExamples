@@ -1,59 +1,7 @@
-#include <iostream>
-using namespace std;
+#include "Base.cpp"
+#include "SortTemplateMethod.cpp"
 
-class Base
-{
-	void a()
-	{
-		cout << "a  ";
-	}
-	void c()
-	{
-		cout << "c  ";
-	}
-	void e()
-	{
-		cout << "e  ";
-	}
-	// 2. Steps requiring peculiar implementations are "placeholders" in base class
-	virtual void ph1() = 0;
-	virtual void ph2() = 0;
-public:
-	// 1. Standardize the skeleton of an algorithm in a base class "template method"
-	void execute()
-	{
-		a();
-		ph1();
-		c();
-		ph2();
-		e();
-	}
-};
-
-class One : public Base
-{
-	// 3. Derived classes implement placeholder methods
-	/*virtual*/void ph1()
-	{
-		cout << "b  ";
-	}
-	/*virtual*/void ph2()
-	{
-		cout << "d  ";
-	}
-};
-
-class Two : public Base
-{
-	/*virtual*/void ph1()
-	{
-		cout << "2  ";
-	}
-	/*virtual*/void ph2()
-	{
-		cout << "4  ";
-	}
-};
+void printArray(int* a, int size);
 
 int main()
 {
@@ -65,5 +13,24 @@ int main()
 	{
 		array[i]->execute();
 		cout << '\n';
+	}
+
+	int a [] = {9, 1, 9, 2, 5, 4, -1, 9, 100, 11, 1, 0};
+	SortTemplateMethod *sortArray [] = { &SortAscending(), &SortDescending() };
+
+	sortArray[0]->sort(a, 12);
+	printArray(a, 12);
+	
+	cout << endl;
+	
+	sortArray[1]->sort(a, 12);
+	printArray(a, 12);
+}
+
+void printArray(int* a, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << a[i] << " ";
 	}
 }
