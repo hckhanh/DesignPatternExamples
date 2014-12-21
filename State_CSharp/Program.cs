@@ -1,4 +1,5 @@
 ﻿using State_CSharp.ATM;
+using State_CSharp.Button;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,20 @@ namespace State_CSharp
             atmMachine.InsertPin(1234);
             atmMachine.RequestCash(10000);
             atmMachine.EjectCard();
+
+            Console.Write("\n\n\n");
+
+            int ch;
+            ButtonMachine button = null;
+            do
+            {
+                if (button == null)
+                    button = new ButtonMachine();
+                else
+                    button.Push();
+                Console.WriteLine("Push \"Enter\"");
+                ch = Console.ReadKey().KeyChar;
+            } while (ch == 13);
         }
     }
 }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace State_CSharp
+namespace State_CSharp.Core.State
 {
-    class StateTwo :  State
+    class StateThree : StateAbstract
     {
         public override void GoNextState(Context context)
         {
-            context.SetState(new StateThree());
+            context.SetState(new StateOne());
         }
     }
 }

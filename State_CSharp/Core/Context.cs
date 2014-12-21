@@ -1,21 +1,22 @@
-﻿using System;
+﻿using State_CSharp.Core.State;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace State_CSharp
+namespace State_CSharp.Core
 {
     class Context
     {
-        State currentState;
+        StateAbstract currentState;
 
         void DoSomething()
         {
             currentState.GoNextState(this);
         }
 
-        internal void SetState(State state)
+        internal void SetState(StateAbstract state)
         {
             currentState = state;
         }
