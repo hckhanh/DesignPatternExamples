@@ -7,3 +7,5 @@ The examples of Design patterns
 The list of patterns available:
 -----
 * Template Method
+* Strategy
+* State
