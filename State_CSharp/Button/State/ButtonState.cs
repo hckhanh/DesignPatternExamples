@@ -13,7 +13,5 @@ namespace State_CSharp.Button.State
             button.SetState(OFF.GetInstance());
             Console.WriteLine("\tturning OFF");
         }
-
-
     }
 }

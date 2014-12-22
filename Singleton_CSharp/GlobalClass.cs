@@ -14,7 +14,7 @@ namespace Singleton_CSharp
 
         public static GlobalClass GetInstance()
         {
-            if (globalClass == null)
+            if (globalClass == null) // Lazy Initialization
                 globalClass = new GlobalClass();
 
             return globalClass;

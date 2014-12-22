@@ -6,9 +6,11 @@ The examples of Design patterns
 
 The list of patterns available:
 -----
-|Pattern         | C#       | C++      |
-|-----           | :-----:  | :-----:  |
-|Template Method |    X     |    X     |
-|* Strategy      |    X     |    X     |
-|* State         |    X     |    X     |
-|* Singleton     |    X     |    X     |
+|     Pattern     | C#  | C++ |
+|:---------------:|:---:|:---:|
+| Template Method |  X  |  X  |
+|     Strategy    |  X  |     |
+|      State      |  X  |     |
+|    Singleton    |  X  |  X  |
+|    Protptype    |  X  |     |
+|    Composite    |  X  |     |

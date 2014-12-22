@@ -10,7 +10,7 @@ namespace State_CSharp.Button.State
     {
         private ON() { }
 
-        private static ON on = new ON();
+        private static ON on = new ON(); // One button has only on "ON" state
 
         public static ButtonState GetInstance()
         {

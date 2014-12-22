@@ -9,7 +9,7 @@ class GlobalClass
 public:
 	static GlobalClass* GetInstance()
 	{
-		if (!instance)
+		if (!instance) // Lazy Initialization
 			instance = new GlobalClass;
 		return instance;
 	}
