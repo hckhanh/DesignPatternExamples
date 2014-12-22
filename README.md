@@ -4,7 +4,7 @@ DesignPatternExamples
 
 The examples of Design patterns
 
-The list of patterns available:
+The list of available patterns:
 -----
 |     Pattern     | C#  | C++ |
 |:---------------:|:---:|:---:|
