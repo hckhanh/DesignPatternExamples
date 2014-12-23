@@ -41,7 +41,9 @@ void printMenu(BakeryStore* store)
 	int key = 1;
 	while (!foodList->empty())
 	{
-		cout << key++ << ". " << foodList->front()->getName() << endl;
+		auto food = foodList->front();
+		cout << key++ << ". " << food->getName() << endl;
 		foodList->pop_front();
+		delete food;
 	}
 }
